@@ -9,3 +9,10 @@ class Categoria(models.Model):
 
     def __str__(self):
         return self.nombreCategoria
+
+class Producto(models.Model):
+    Categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
+    nombreProducto = models.CharField(max_length=50, verbose_name='Nombre del Producto')
+
+    def __str__(self):
+        return self.nombreProducto
