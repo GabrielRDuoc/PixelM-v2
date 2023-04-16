@@ -1,5 +1,8 @@
 """
 URL configuration for pruebadjango project.
+URL de Oracle Enterprise Manager Database Express: https://localhost:5500/em
+pixel1234567
+
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/

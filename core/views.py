@@ -1,12 +1,14 @@
 from django.shortcuts import render, redirect
+from .models import Usuario
+from .forms import ClientForm
 
 
 # Create your views here. aca se debe crear una nueva funcion para la nueva landig
 
-class usuario:
-    def _init_(self, correo, contraseña):
-        self.correo=correo
-        self.contraseña=contraseña
+#class usuario:
+#    def _init_(self, correo, contraseña):
+#        self.correo=correo
+#        self.contraseña=contraseña
 
 
 def index(request):
@@ -30,3 +32,16 @@ def EditarPerfil(request):
 
 def carritoCompras(request):
     return render(request, 'core/carritoCompras.html')
+
+def form_cliente(request):
+    datos = {
+        'form': ClientForm()
+    }
+    if request.method=='POST':
+        formulario= ClientForm(request.POST)
+        if formulario.is_valid:
+            formulario.save()
+            datos['mensaje'] = "Guardado Correctamente"
+    return render(request, 'core/Crearcuenta.html', datos)
+
+    
