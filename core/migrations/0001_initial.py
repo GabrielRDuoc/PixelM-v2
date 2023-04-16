@@ -17,26 +17,6 @@ class Migration(migrations.Migration):
             fields=[
                 ('idCategoria', models.IntegerField(primary_key=True, serialize=False, verbose_name='id de Categoria')),
                 ('nombreCategoria', models.CharField(max_length=50, verbose_name='Nombre de la categoria')),
-            ],
-        ),
-        migrations.CreateModel(
-            name='Usuario',
-            fields=[
-                ('idUsuario', models.IntegerField(primary_key=True, serialize=False, verbose_name='id de usuario')),
-                ('Nombre', models.CharField(max_length=50, verbose_name='Nombre del usuario')),
-                ('Apellido', models.CharField(max_length=50, verbose_name='Apellido del usuario')),
-                ('Correo', models.CharField(max_length=50, verbose_name='Correo')),
-                ('Direccion', models.CharField(max_length=50, verbose_name='Direccion del usuario')),
-                ('Contraseña', models.CharField(max_length=50, verbose_name='Contraseña')),
-                ('confirmContraseña', models.CharField(max_length=50, verbose_name='confirmContraseña')),
-            ],
-        ),
-        migrations.CreateModel(
-            name='Producto',
-            fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('nombreProducto', models.CharField(max_length=50, verbose_name='Nombre del Producto')),
-                ('Categoria', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='core.categoria')),
-            ],
-        ),
+            ]
+        )
     ]
