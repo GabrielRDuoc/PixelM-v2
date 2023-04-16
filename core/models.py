@@ -16,3 +16,14 @@ class Producto(models.Model):
 
     def __str__(self):
         return self.nombreProducto
+    
+
+    class Usuario(models.Model):
+        idUsuario=models.IntegerField(primary_key=True, verbose_name='id de usuario')
+        Nombre = models.CharField(max_length=50, verbose_name='Nombre del usuario')
+        Apellido = models.CharField(max_length=50, verbose_name='Apellido del usuario')
+        Correo =  models.CharField(max_length=50, verbose_name='Correo')
+        Direccion = models.CharField(max_length=50, verbose_name='Direccion del usuario')
+        Contraseña = models.CharField(max_length=50, verbose_name='Contraseña')
+        def __str__(self):
+            return self.Nombre
